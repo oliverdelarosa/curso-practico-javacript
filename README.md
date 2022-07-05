@@ -1,1 +1,1 @@
-# curso-practico-javacript
+# Curso practico de React.js
