@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+import uno from './images/messi.jpg';
+import dos from './images/neymar.jpg';
+import tres from './images/vinivius.jpg';
+import three from './images/incognito.jpg';
+
 import './App.css';
 
 function App() {
+  let nombres=["messi","neymar","vini"];
+  
+  const cambiarimagen = (e)=>{
+   if(e.target.src.includes("incognito")){
+    e.target.style.visibility="hidden";
+
+   }else{
+    e.target.src=three;
+  }
+
+  }
+
+
+  const cambiartexto = (e)=>{
+     if(e.target.innerHTML=="visto"){
+      e.target.innerHTML="";
+     }else{
+      e.target.innerHTML="visto";
+     }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <div className="contenedor">
+        <div className="caja">
+        <img onClick={cambiarimagen}  src={uno}/>
+        <div onClick={cambiartexto} className="nombre"> {nombres[0]}</div>
+        </div>
+        <div className="caja">
+        <img onClick={cambiarimagen} src={dos}/>
+        <div onClick={cambiartexto} className="nombre"> {nombres[1]}</div>
+        </div>
+        <div className="caja">
+        <img onClick={cambiarimagen} src={tres}/>
+        <div onClick={cambiartexto} className="nombre"> {nombres[2]}</div>
+        </div>
+        
+</div>
+
+    </>
+      
   );
 }
 
